@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "0d2db61a-2789-4f28-a4a9-5f93ab839ea5",
+		"name": "shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"product\" :  {  \n      \"name\":\"nombre\",\n      \"price\":10, \n      \"amount\":10\n     }\n }"
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/products/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								""
+							]
+						},
+						"description": "\t\t\t\t"
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"product\" :  {  \n      \"name\":\"nombre\",\n      \"price\":5, \n      \"amount\":5\n     }\n }"
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/products/20",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"20"
+							]
+						},
+						"description": "\t\t\t\t"
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/products/23",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"23"
+							]
+						},
+						"description": "\t\t\t\t"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "create cart_line",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cart_line\" :  {  \n  \t\"product_id\":5,\n    \"quantity\":12\n     }\n }"
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/cart_lines",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cart_lines"
+							],
+							"query": [
+								{
+									"key": "Set-Cookie",
+									"value": "_shop_session=INP6%2FCvoeqsFVVJhX60saGqV9J4Wcu08kwuxvg%2ByTwnf%2Bz95CFtydNU5V68YqBDbYkDaHkCDfzQgyCER5UF0tXZD4BoBC9B7ILucWGfNIQnNfKBPMa5cOxcuBEN5YEskqpBbK12qLewIvolno%2Fyx17YGvB8gN%2FmzoajOmh4GQNnzj0cpjnttGk%2BsgOvd56Dxeg%3D%3D--XG%2FDxOpI12SUmZlu--ze5hGTrxTRAeU3u8BGj%2BjQ%3D%3D; path=/; HttpOnly",
+									"disabled": true
+								}
+							]
+						},
+						"description": "\t\t\t\t"
+					},
+					"response": []
+				},
+				{
+					"name": "update cart_line",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cart_line\" :  {  \n  \t\"product_id\":5,\n    \"quantity\":12\n     }\n }"
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/cart_lines/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cart_lines",
+								"4"
+							]
+						},
+						"description": "\t\t\t\t"
+					},
+					"response": []
+				},
+				{
+					"name": "delete cart_line",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/cart_lines/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cart_lines",
+								"4"
+							]
+						},
+						"description": "\t\t\t\t"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
