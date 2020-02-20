@@ -4,10 +4,8 @@ one:
   name: Product one
   price: 9.99
   amount: 10
-  published: true
 
 two:
   name: Product two
   price: 29
   amount: 2
-  published: true

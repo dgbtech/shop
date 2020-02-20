@@ -1,7 +1,7 @@
 class Api::V1::ProductsController < ApplicationController
-  skip_before_action :verify_authenticity_token
-  before_action :set_product, only: %i[update destroy]
 
+
+  before_action :set_product, only: %i[update destroy]
 
   def create
     product = Product.new(product_params)
@@ -25,15 +25,6 @@ class Api::V1::ProductsController < ApplicationController
     head 204
   end
 
-  def add_cart_product
-    cart = session[:cart] || {}
-    cart[params[:product_id]] ||= 0
-    cart[params[:product_id]] += params[:amount].to_i
-    session[:cart] = cart
-    # TODO reset_session
-    render status: :ok
-  end
-
   private
 
   def set_product
@@ -41,7 +32,7 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :amount, :published)
+    params.require(:product).permit(:name, :price, :amount)
   end
 
 end

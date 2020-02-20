@@ -9,7 +9,7 @@ class Api::V1::ProductsControllerTest < ActionDispatch::IntegrationTest
 	test 'should create product' do
     assert_difference('Product.count') do
       post api_v1_products_url,
-           params: { product: { name: "New product name", price: @product.price, amount: @product.amount, published: @product.published } },
+           params: { product: { name: "New product name", price: @product.price, amount: @product.amount } },
            as: :json
     end
     assert_response :created
