@@ -13,8 +13,7 @@ Product.delete_all
   product = Product.create!(
       name: Faker::Commerce.unique.product_name,
       amount: rand(1..100),
-      price: rand(1.0..500), # TODO .round(2) || "%.2f" % product.price
-      published: true
+      price: rand(1.0..500)
       )
   puts "Created new product: #{product.name}"
 end

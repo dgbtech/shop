@@ -4,7 +4,6 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :name
       t.decimal :price, precision: 4, scale: 2
       t.integer :amount
-      t.boolean :published
 
       t.timestamps
     end
